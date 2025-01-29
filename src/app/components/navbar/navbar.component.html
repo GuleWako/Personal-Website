@@ -1,7 +1,15 @@
-<nav class="fixed top-0 left-0  container duration-700 h-screen w-24 dark:duration-700 dark:bg-slate-950 shadow-lg">
+<button class="md:hidden fixed top-4 left-4 z-40 p-2 rounded-lg text-black text-3xl text-center ml-3.5 dark:text-white"  (click)="toggleNavbar()">
+  {{ isNavbarOpen ? '✕' : '☰' }}
+</button>
+<nav (click)="toggleNavbar()" class="fixed top-0 left-0 bg-white  container duration-700 h-screen w-24 dark:duration-700 dark:bg-slate-950 shadow-lg md:block transform transition-transform z-30 mt-10  md:mt-0" 
+[ngClass]="{'-translate-x-full': !isNavbarOpen, 'translate-x-0': isNavbarOpen}"
+
+>
+  
+ 
   
 
-  <div class=" flex flex-col items-center gap-16">
+  <div class="flex flex-col items-center gap-16">
    <div class="flex flex-col items-center gap-6">
     <a (click)="selectSection('home')" routerLink="home" class="mt-8">
         <h1 class="text-5xl font-bold text-black dark:text-white tracking-wide uppercase">G</h1>
@@ -93,3 +101,113 @@
    
   </div>
 </nav>
+
+<nav (click)="toggleNavbar()" class="fixed top-0 left-0 bg-white  container duration-700 h-screen w-24 dark:duration-700 dark:bg-slate-950 shadow-lg hidden md:block transform transition-transform z-30 mt-10  md:mt-0" 
+
+>
+  
+ 
+  
+
+  <div class="flex flex-col items-center gap-16">
+   <div class="flex flex-col items-center gap-6">
+    <a (click)="selectSection('home')" routerLink="home" class="mt-8">
+        <h1 class="text-5xl font-bold text-black dark:text-white tracking-wide uppercase">G</h1>
+
+    </a>
+   <div>
+    <button class="text-black transition-transform hover:scale-125 align-middle dark:text-white" (click)="toggleDarkMode()">
+      <span *ngIf="!darkMode" class="material-icons ">dark_mode</span>
+      <span *ngIf="darkMode" class="material-icons">light_mode</span>
+  </button>
+   </div>
+  </div>
+ 
+    <div class="">
+      <ul class="flex flex-col gap-3">
+        <li class="flex items-center p-1 text-sm gap-x-2 text-white dark:text-white">
+            <div class="relative group" >
+                <!-- SVG Icon -->
+                <svg class="w-8 h-8 text-black dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"/>
+                </svg>
+                
+                <a routerLink="/home">
+                <button (click)="selectSection('home')" class="hover:w-16 hover:border left-[-50%] hover:shadow-lg h-8 hover:text-slate-800 absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity text-black dark:text-white dark:hover:bg-white dark:hover:text-slate-800 bg-white duration-1000 rounded px-2 py-1 text-sm ">
+                  Home
+                </button>
+              </a>
+              </div>
+              
+        </li>
+        <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+            <div class="relative group">
+                <svg class="w-8 h-8 text-black dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                  </svg>
+                  
+                  <a routerLink="/about">
+                  <button (click)="selectSection('about')" class=" duration-1000 left-[-50%] hover:border hover:shadow-lg h-8 hover:text-slate-800 absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity text-black dark:text-white dark:hover:bg-white dark:hover:text-slate-800 bg-white  rounded px-2 py-1 text-sm">
+                    About
+                  </button>
+                </a>
+            </div>
+        </li>
+        <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+           <div class="relative group">
+            <svg class="w-8 h-8 text-black dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v1M9 12H4m8 8V9h8v11h-8Zm0 0H9m8-4a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"/>
+              </svg>
+              
+              
+              <a routerLink="/services">
+              <button (click)="selectSection('services')" class="duration-1000 left-[-50%] hover:border hover:shadow-lg h-8 hover:text-slate-800  absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity text-black dark:text-white bg-white dark:hover:bg-white dark:hover:text-slate-800  rounded px-2 py-1 text-sm">
+                Services
+              </button>
+            </a>
+           </div>
+        </li>
+        <li
+        class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+       <div class="relative group">
+        <svg class="w-8 h-8 text-black dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 9h3m-3 3h3m-3 3h3m-6 1c-.306-.613-.933-1-1.618-1H7.618c-.685 0-1.312.387-1.618 1M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm7 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
+          </svg>
+          
+            <a routerLink="/works">
+          <button (click)="selectSection('works')" class="duration-1000 hover:border left-[-50%] hover:shadow-lg h-8 hover:text-slate-800 absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity text-black dark:text-white bg-white dark:hover:bg-white dark:hover:text-slate-800  rounded px-2 py-1 text-sm">
+            Portfolio
+          </button>
+        </a>
+       </div>
+        </li>
+        <li
+        class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+        <div class="relative group">
+            <svg class="w-8 h-8 text-black dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 6H5m2 3H5m2 3H5m2 3H5m2 3H5m11-1a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2M7 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm8 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
+              </svg>
+              
+              
+     <a routerLink="/contact">
+              <button (click)="selectSection('contact')" class="duration-1000 left-[-50%] hover:border hover:shadow-lg h-8 hover:text-slate-800 absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity text-black dark:text-white bg-white dark:hover:bg-white dark:hover:text-slate-800  rounded px-2 py-1 text-sm">
+                Contact
+              </button>
+            </a>
+        </div>
+        </li>
+      </ul>
+    </div>
+   
+  </div>
+</nav>
+<!-- <nav 
+  class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300"
+  [ngClass]="{'-translate-x-full': !isNavbarOpen, 'translate-x-0': isNavbarOpen}">
+  <ul class="p-4 space-y-4">
+    <li><a href="#" class="block p-2">Home</a></li>
+    <li><a href="#" class="block p-2">About</a></li>
+    <li><a href="#" class="block p-2">Services</a></li>
+    <li><a href="#" class="block p-2">Contact</a></li>
+  </ul>
+</nav> -->

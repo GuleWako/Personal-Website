@@ -10,6 +10,10 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+isNavbarOpen=false;
+toggleNavbar() {
+  this.isNavbarOpen = !this.isNavbarOpen;
+}
   router = inject(Router)
   @Input() darkMode:any;
   @Input() toggleDarkMode!: () => void;
