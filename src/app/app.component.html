@@ -1,13 +1,13 @@
 <div class="dark:bg-neutral-500 w-full h-screen">
-  <div class="flex overflow-hidden">
-    <div class="w-screen">
+  <div class="overflow-hidden">
+    <div class="w-full">
       <app-navbar
         (sectionSelected)="selectSection($event)"
         [darkMode]="darkMode()"
         [toggleDarkMode]="toggleDarkMode.bind(this)"
       />
     </div>
-    <div class="w-screen min-h-screen">
+    <div class="w-full min-h-screen">
       <section #home><app-home (sectionSelected)="selectSection($event)"/></section>
       <section #about><app-aboutus></app-aboutus></section>
       <section #services><app-ourservice></app-ourservice></section>

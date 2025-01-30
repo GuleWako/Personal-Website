@@ -1,7 +1,7 @@
 <button class="md:hidden fixed top-4 left-4 z-40 p-2 rounded-lg text-black text-3xl text-center ml-3.5 dark:text-white"  (click)="toggleNavbar()">
   {{ isNavbarOpen ? '✕' : '☰' }}
 </button>
-<nav (click)="toggleNavbar()" class="fixed top-0 left-0 bg-white  container duration-700 h-screen w-24 dark:duration-700 dark:bg-slate-950 shadow-lg md:block transform transition-transform z-30 mt-10  md:mt-0" 
+<nav (click)="toggleNavbar()" class="fixed top-0 left-0 bg-white  container duration-700 h-screen w-24 dark:duration-700 dark:bg-slate-950 shadow-lg md:block transform transition-transform z-30 pt-10  md:mt-0" 
 [ngClass]="{'-translate-x-full': !isNavbarOpen, 'translate-x-0': isNavbarOpen}"
 
 >
