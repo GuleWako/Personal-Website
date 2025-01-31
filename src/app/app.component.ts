@@ -33,6 +33,7 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('services', { static: false }) services!: ElementRef;
   @ViewChild('works', { static: false }) works!: ElementRef;
   @ViewChild('contact', { static: false }) contact!: ElementRef;
+  @ViewChild('footer', { static: false }) footer!: ElementRef;
 
 
   private sectionMap = new Map<string, ElementRef>();
@@ -43,9 +44,10 @@ export class AppComponent implements AfterViewInit {
     this.sectionMap.set('services', this.services);
     this.sectionMap.set('works', this.works);
     this.sectionMap.set('contact', this.contact);
+    this.sectionMap.set('footer', this.footer);
   }
   selectSection(section: string){
-   const target = this.sectionMap.get(section);
+   const target = this.sectionMap.get(section)
     if (target) {
       target.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }

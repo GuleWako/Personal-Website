@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+   @Output() sectionSelected = new EventEmitter<string>();
+  selectSection(section: string) {
+    this.sectionSelected.emit(section)
+
+  } 
 
 }

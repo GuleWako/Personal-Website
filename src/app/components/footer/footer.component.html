@@ -230,17 +230,19 @@
     </div>
     <div class="hidden lg:block w-fit">
       <div class="text-sm flex gap-2 xl:gap-10">
-        <button>Home</button>
-        <button>About</button>
-        <button>Portfolio</button>
-        <button>Services</button>
-        <button>Contact</button>
+        <button  (click)="selectSection('home')">Home</button>
+        <button  (click)="selectSection('about')">About</button>
+        <button  (click)="selectSection('works')">Portfolio</button>
+        <button  (click)="selectSection('services')">Services</button>
+        <button  (click)="selectSection('contact')">Contact</button>
       </div>
     </div>
     <div class="lg:hidden">
       <button
-      class="dark:text-white bg-transparent bg-blue-500 text-slate-100 font-semibold hover:text-white py-1 px-8 rounded"
+      class="dark:text-white bg-transparent bg-blue-600 text-slate-100 font-semibold hover:text-white py-1 px-8 rounded"
+      (click)="selectSection('home')"
     >
+    
     ⬅️ Back to homepage
     </button>
     </div>

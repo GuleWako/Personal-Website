@@ -13,7 +13,7 @@
       <section #services><app-ourservice></app-ourservice></section>
       <section #works><app-ourwork></app-ourwork></section>
       <section #contact><app-contact></app-contact></section>
-      <section #footer><app-footer></app-footer></section>
+      <section #footer><app-footer (sectionSelected)="selectSection($event)"/></section>
     </div>
   </div>
 </div>
