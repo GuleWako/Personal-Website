@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-aboutus',
@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './aboutus.component.css'
 })
 export class AboutusComponent {
+  @Output() sectionSelected = new EventEmitter<string>();
+  selectSection(section: string) {
+    this.sectionSelected.emit(section)
+
+  } 
   callMe() {
     window.location.href = "tel:+251934437389";
   }
