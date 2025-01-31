@@ -1,5 +1,5 @@
 <div
-  class="md:pl-24 flex items-center justify-between md:min-h-full duration-700 dark:duration-700 bg-white dark:bg-slate-950 dark:text-white"
+  class="md:pl-24 flex items-center justify-between min-h-screen duration-700 dark:duration-700 bg-white dark:bg-slate-950 dark:text-white"
 >
   <div class="self-start flex justify-center items-center">
     <div class="text-4xl mt-16 flex flex-col gap-4  lg:flex-row m-1 md:ml-3 w-full">
@@ -22,7 +22,7 @@
             <h1>About Me</h1>
             <h1 class="text-xl text-center">I'm Software engineer and AI <br class="md:hidden">Researcher</h1>
           </div>
-          <div class="p-4 space-y-4  rounded-lg shadow text-lg">
+          <div class="p-4 space-y-4  rounded-lg shadow text-xl">
             <p class="text-gray-700 dark:text-gray-400 leading-relaxed">
               I am a highly skilled computer science and engineering professional with expertise in Java, JavaScript, Python, React, Angular, Node.js, Express.js, and Spring Boot. I excel in data retrieval techniques, including SQL and Object-Relational Mappers (ORMs). With a strong foundation in mobile and web development, I combine theoretical knowledge with practical experience. I have a proven track record of successfully leading full-stack projects, demonstrating exceptional project management skills.
             </p>
@@ -133,14 +133,16 @@
 
             
           </div>
-          <div class="flex gap-4 items-center text-xl font-serif">
+          <div class="flex gap-4 items-center text-xl font-serif mt-4">
             <button
               class="px-6 dark:text-white bg-transparent hover:bg-green-500 text-slate-800 font-semibold hover:text-white border border-green-500 hover:border-transparent rounded"
-            >
+              (click)="callMe()" 
+              >
               Call
             </button>
             <button
               class="px-6 dark:text-white bg-transparent hover:bg-green-500 text-slate-800 font-semibold hover:text-white border border-green-500 hover:border-transparent rounded"
+              (click)="sendEmail()"
             >
               Send Email
             </button>

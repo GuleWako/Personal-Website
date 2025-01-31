@@ -10,6 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  openGoogleDrive() {
+    window.open("https://drive.google.com/file/d/1SOxO3M9kIr0AEvPDEZncojPQ4UUpx5Id/view?usp=sharing", "_blank");
+  }
   @Output() sectionSelected = new EventEmitter<string>();
 
   selectSection(section: string) {
