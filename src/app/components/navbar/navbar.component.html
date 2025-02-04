@@ -1,38 +1,190 @@
-<div class="fixed bottom-0 right-0 w-screen bg-blue-gray-900 h-16 z-30">
+<div class="md:hidden fixed bottom-0 right-0 w-screen bg-green-400 h-16 z-30">
+  
+    <button
+      class="text-black transition-transform hover:scale-125 align-middle dark:text-white fixed bottom-2 right-28"
+      (click)="toggleDarkMode()"
+    >
+      <span *ngIf="!darkMode" class="material-icons">dark_mode</span>
+      <span *ngIf="darkMode" class="material-icons">light_mode</span>
+    </button>
+  
   <button
-  class="md:hidden fixed bottom-2 right-2 z-40 p-1 rounded-md text-black text-3xl text-center border border-gray-300 bg-white"
+  class=" fixed bottom-2 right-2 z-40 p-1 rounded-md text-black text-3xl text-center border border-gray-300 bg-white"
   (click)="toggleNavbar()"
 >
   {{ isNavbarOpen ? "✕" : "☰" }}
 </button>
 </div>
-<div class="flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg p-6 fixed -bottom-6 right-0 w-screen z-30"
+<div class="flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg p-6 fixed -bottom-6 right-0 w-screen z-30 md:hidden"
 
  [ngClass]="{
     'hidden': !isNavbarOpen,
     'translate-y-0': isNavbarOpen
   }">
-  <div class="flex items-center mb-4">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 text-slate-600 ">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
-    </svg>
-    <h5 class="ml-3 text-slate-800 text-xl font-semibold">
-      Website Review Check
-    </h5>
-  </div>
-  <p class="block text-slate-600 leading-normal font-light mb-4">
-    Because it&apos;s about motivating the doers. Because I&apos;m here to follow my dreams and inspire others.
-  </p>
-  <div>
-    <a href="#" class="text-slate-800 font-semibold text-sm hover:underline flex items-center">
-      Learn More
-      <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-      </svg>
-    </a>
-  </div>
+
+<div class="">
+  <ul class="grid grid-cols-3 gap-3">
+    <li
+      class="flex items-center p-1 text-sm gap-x-2 text-white dark:text-white"
+    >
+      <div class="relative group"
+      (click)="selectSection('home')">
+        
+        <svg
+          class="w-8 h-8 text-black dark:text-black"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"
+          />
+        </svg>
+
+        <a routerLink="/home">
+          <button
+            
+            class="text-black"
+          >
+            Home
+          </button>
+        </a>
+      </div>
+    </li>
+    <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+      <div class="relative group"
+      (click)="selectSection('about')">
+        <svg
+          class="w-8 h-8 text-black dark:text-black"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+
+        <a routerLink="/about">
+          <button
+          
+            class="text-black"
+          >
+            About
+          </button>
+        </a>
+      </div>
+    </li>
+    <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+      <div class="relative group"
+      (click)="selectSection('services')">
+        <svg
+          class="w-8 h-8 text-black dark:text-black"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v1M9 12H4m8 8V9h8v11h-8Zm0 0H9m8-4a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"
+          />
+        </svg>
+
+        <a routerLink="/services">
+          <button
+           
+            class="text-black"
+          >
+            Services
+          </button>
+        </a>
+      </div>
+    </li>
+    <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+      <div class="relative group"
+      (click)="selectSection('works')">
+        <svg
+          class="w-8 h-8 text-black dark:text-black"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 9h3m-3 3h3m-3 3h3m-6 1c-.306-.613-.933-1-1.618-1H7.618c-.685 0-1.312.387-1.618 1M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm7 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+          />
+        </svg>
+
+        <a routerLink="/works">
+          <button
+            
+            class="text-black"         
+             >
+            Portfolio
+          </button>
+        </a>
+      </div>
+    </li>
+    <li class="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+      <div class="relative group"
+      (click)="selectSection('contact')">
+        <svg
+          class="w-8 h-8 text-black dark:text-black"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 6H5m2 3H5m2 3H5m2 3H5m2 3H5m11-1a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2M7 3h11a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm8 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+          />
+        </svg>
+
+        <a routerLink="/contact">
+          <button
+           
+            class="text-black"          >
+            Contact
+          </button>
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
   <button
-  class="md:hidden fixed bottom-2 right-2 z-40 p-1 rounded-md text-black text-3xl text-center border border-gray-300 bg-white"
+  class=" fixed bottom-2 right-2 z-40 p-1 rounded-md text-black text-3xl text-center border border-gray-300 bg-white"
   (click)="toggleNavbar()"
 >
   {{ isNavbarOpen ? "✕" : "☰" }}
@@ -229,13 +381,30 @@
   class="fixed top-0 left-0 bg-white container duration-700 w-20 dark:duration-700 dark:bg-slate-950 hidden md:block transform transition-transform z-30 mt-10 md:mt-0"
 >
   <div class="flex flex-col items-center gap-16 h-screen overflow-auto">
-    <div class="flex flex-col items-center gap-6 mb-32">
+    <div class="flex flex-col items-center justify-center gap-6 mb-32">
       <a (click)="selectSection('home')" routerLink="home" class="mt-8">
-        <h1
-          class="text-5xl font-bold text-black dark:text-white tracking-wide uppercase"
-        >
-          G
-        </h1>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="50" height="50">
+          <!-- Background circle -->
+          <circle cx="100" cy="100" r="95" fill="url(#grad1)" stroke="black" stroke-width="3" />
+        
+          <!-- The letter G with gradient and shadow effect -->
+          <text x="50" y="130" font-family="Arial, sans-serif" font-size="100" fill="white" font-weight="bold" text-shadow="3px 3px 5px rgba(0,0,0,0.3)">
+            G
+          </text>
+        
+          <!-- Gradient Definition -->
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color: #00bcd4; stop-opacity: 1" />
+              <stop offset="100%" style="stop-color: #ff4081; stop-opacity: 1" />
+            </linearGradient>
+          </defs>
+        </svg>
+        
+        
+        
+        <!-- <img  src="/noun-c-clamp-4560268.svg"  alt=""> -->
+     
       </a>
       <div>
         <button
