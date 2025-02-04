@@ -9,6 +9,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class FooterComponent {
    @Output() sectionSelected = new EventEmitter<string>();
+currentYear: number = new Date().getFullYear();
   selectSection(section: string) {
     this.sectionSelected.emit(section)
 
