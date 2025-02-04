@@ -8,11 +8,12 @@ import { HomeComponent } from "./components/home/home.component";
 import { OurserviceComponent } from "./components/myservice/ourservice.component";
 import { OurworkComponent } from "./components/mywork/ourwork.component";
 import { ContactComponent } from "./components/contact/contact.component";
+import { SkillComponent } from "./components/skill/skill.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule,  RouterOutlet, NavbarComponent, FooterComponent, CommonModule, AboutusComponent, HomeComponent, OurserviceComponent, OurworkComponent, ContactComponent],
+  imports: [RouterModule, RouterOutlet, NavbarComponent, FooterComponent, CommonModule, AboutusComponent, HomeComponent, OurserviceComponent, OurworkComponent, ContactComponent, SkillComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -30,6 +31,7 @@ export class AppComponent implements AfterViewInit {
 
   @ViewChild('home', { static: false }) home!: ElementRef;
   @ViewChild('about', { static: false }) about!: ElementRef;
+  @ViewChild('skill', { static: false }) skill!: ElementRef;
   @ViewChild('services', { static: false }) services!: ElementRef;
   @ViewChild('works', { static: false }) works!: ElementRef;
   @ViewChild('contact', { static: false }) contact!: ElementRef;
@@ -41,6 +43,7 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.sectionMap.set('home', this.home);
     this.sectionMap.set('about', this.about);
+    this.sectionMap.set('skill', this.skill);
     this.sectionMap.set('services', this.services);
     this.sectionMap.set('works', this.works);
     this.sectionMap.set('contact', this.contact);
